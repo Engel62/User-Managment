@@ -23,23 +23,6 @@ REST API приложение для управления пользовател
 - ✅ Кэширование данных
 - ✅ Миграции базы данных
 
-## 🏗️ Структура проекта
-src/
-├── main/
-│ ├── src/main/java/com/example/User/Management
-│ │ ├── config/ # Конфигурационные классы
-│ │ ├── controller/ # REST контроллеры
-│ │ ├── dto/ # Data Transfer Objects
-│ │ ├── model/ # Сущности JPA
-│ │ ├── repository/ # Репозитории Spring Data
-│ │ ├── service/ # Бизнес-логика
-│ │ └── UserApiApplication.java
-│ └── resources/
-│ ├── db/changelog/ # Миграции Liquibase
-│ └── application.properties
-
-text
-
 ## 🚀 Быстрый старт
 
 ### 1. Клонирование и сборка
