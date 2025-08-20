@@ -63,13 +63,13 @@ public class UserService {
     }
 
     private UserResponse mapToResponse(User user) {
-        return new UserResponse(
-                user.getId(),
-                user.getFio(),
-                user.getPhoneNumber(),
-                user.getAvatarUrl(),
-                user.getRole().getRoleName()
-        );
+        return UserResponse.builder()
+                .id(user.getId())
+                .fio(user.getFio())
+                .phoneNumber(user.getPhoneNumber())
+                .avatarUrl(user.getAvatarUrl())
+                .role(user.getRole().getName())
+                .build();
     }
 }
 

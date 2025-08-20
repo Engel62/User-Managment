@@ -1,5 +1,4 @@
 package com.example.User.Management.dto;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
@@ -16,7 +15,7 @@ public class UserRequest {
     @NotBlank(message = "Номер телефона не может быть пустым")
     @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Некорректный номер телефона")
     private String phoneNumber;
-    @URL(message = "Некоректный URL аватара")
+    @URL(message = "Некорректный URL аватара")
     private String avatarUrl;
     @NotBlank(message = "Роль не может быть пустой")
     private String role;
