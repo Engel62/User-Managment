@@ -1,0 +1,71 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: engel
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: role_name
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: fio
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: avatar
+                  type: TEXT
+              - column:
+                  name: role_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_user_role
+                    references: roles(id)
+
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  value: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"
+              - column:
+                  name: role_name
+                  value: 'USER'
+
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  value: "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a12"
+              - column:
+                  name: role_name
+                  value: 'ADMIN'
